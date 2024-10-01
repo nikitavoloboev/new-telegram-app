@@ -1,10 +1,10 @@
 import { defineConfig } from "@tanstack/start/config"
-import tsConfigPaths from "vite-tsconfig-paths"
-import { resolve } from "node:path"
 import basicSsl from "@vitejs/plugin-basic-ssl"
-import { readFileSync } from "node:fs"
 import react from "@vitejs/plugin-react"
+import { readFileSync } from "node:fs"
+import { resolve } from "node:path"
 import { nodePolyfills } from "vite-plugin-node-polyfills"
+import tsConfigPaths from "vite-tsconfig-paths"
 
 const local = process.env.LOCAL === "true"
 
@@ -43,10 +43,15 @@ export default defineConfig({
     https:
       local === true
         ? {
-            cert: readFileSync(resolve("certificates/tma.internal.pem")),
-            key: readFileSync(resolve("certificates/tma.internal-key.pem")),
+            cert: readFileSync(
+              resolve("certificates/tma.internal.pem"),
+              "utf8",
+            ),
+            key: readFileSync(
+              resolve("certificates/tma.internal-key.pem"),
+              "utf8",
+            ),
           }
         : undefined,
   },
-  publicDir: "./public",
 })
