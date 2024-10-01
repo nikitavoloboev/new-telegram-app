@@ -1,14 +1,14 @@
+import type { QueryClient } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import {
   Link,
   Outlet,
   ScrollRestoration,
   createRootRouteWithContext,
 } from "@tanstack/react-router"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { TanStackRouterDevtools } from "@tanstack/router-devtools"
 import { Body, Head, Html, Meta, Scripts } from "@tanstack/start"
 import * as React from "react"
-import type { QueryClient } from "@tanstack/react-query"
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary"
 import { NotFound } from "~/components/NotFound"
 import appCss from "~/styles/app.css?url"
@@ -65,9 +65,13 @@ export const Route = createRootRouteWithContext<{
 })
 
 function RootComponent() {
+  // const debug = useLaunchParams().startParam === "debug"
   return (
     <RootDocument>
+      {/* TODO: commenting as there is issues */}
+      {/* <SDKProvider debug={debug}> */}
       <Outlet />
+      {/* </SDKProvider> */}
     </RootDocument>
   )
 }
