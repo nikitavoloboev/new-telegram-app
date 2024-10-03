@@ -39,21 +39,20 @@ export default defineConfig({
         : []),
     ],
   },
-  // TODO: something weird happening with this
-  // server: {
-  //   host: "tma.internal",
-  //   https:
-  //     local === true
-  //       ? {
-  //           cert: readFileSync(
-  //             resolve("certificates/tma.internal.pem"),
-  //             "utf8",
-  //           ),
-  //           key: readFileSync(
-  //             resolve("certificates/tma.internal-key.pem"),
-  //             "utf8",
-  //           ),
-  //         }
-  //       : undefined,
-  // },
+  server: {
+    // host: "tma.internal",
+    https:
+      local === true
+        ? {
+            cert: readFileSync(
+              resolve("certificates/tma.internal.pem"),
+              "utf8",
+            ),
+            key: readFileSync(
+              resolve("certificates/tma.internal-key.pem"),
+              "utf8",
+            ),
+          }
+        : undefined,
+  },
 })
