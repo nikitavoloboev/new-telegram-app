@@ -53,10 +53,10 @@ Then in root `.env`, add:
 LOCAL=true
 ```
 
-Then:
+## Run
 
 ```
-bun app
+bun dev
 ```
 
-Start the mini app and changes will reflect in the mini app as you edit them.
+And open the bot in Telegram as mini app.
