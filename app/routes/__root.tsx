@@ -26,9 +26,8 @@ export const Route = createRootRouteWithContext<{
       content: "width=device-width, initial-scale=1",
     },
     ...seo({
-      title:
-        "TanStack Start | Type-Safe, Client-First, Full-Stack React Framework",
-      description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
+      title: "",
+      description: ``,
     }),
   ],
   links: () => [
@@ -65,13 +64,9 @@ export const Route = createRootRouteWithContext<{
 })
 
 function RootComponent() {
-  // const debug = useLaunchParams().startParam === "debug"
   return (
     <RootDocument>
-      {/* TODO: commenting as there is issues */}
-      {/* <SDKProvider debug={debug}> */}
       <Outlet />
-      {/* </SDKProvider> */}
     </RootDocument>
   )
 }
