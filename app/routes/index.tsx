@@ -1,7 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react"
 
 function RouteComponent() {
-  return <div></div>
+  const wallet = useTonWallet()
+  console.log(wallet)
+  return (
+    <div>
+      <TonConnectButton style={{}} className="ton-connect-button" />
+    </div>
+  )
 }
 
 export const Route = createFileRoute("/")({
